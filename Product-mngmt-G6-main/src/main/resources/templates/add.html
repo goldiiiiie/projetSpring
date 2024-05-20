@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      >
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"
+          href="webjars/bootstrap/5.3.3/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Ecomm-App</title>
+    <script src="webjars/bootstrap/5.3.3/js/bootstrap.min.js" rel="script"></script>
+</head>
+<body>
+    <div class="container">
+        <h1> Ecomm App</h1>
+        <hr>
+        <h2>Save Product</h2>
+        <form th:action="@{/saveProduct}" th:object="${product}" method="post">
+            <div class="mb-3 row">
+                <label for="name" class="col-sm-2 col-form-label">Product Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="name" th:field="*{name}" >
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="ref" class="col-sm-2 col-form-label">Product Ref</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="ref" th:field="*{ref}">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="code" class="col-sm-2 col-form-label">Product Code</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="code" th:field="*{code}">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="date" class="col-sm-2 col-form-label">Production Date</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="date" th:field="*{prodDate}">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="price" class="col-sm-2 col-form-label">Product Price</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="price" th:field="*{price}">
+                </div>
+            </div>
+            <div >
+                <button type="submit" class="btn btn-primary" >Save changes</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
